@@ -1,7 +1,8 @@
 // Canvas Related 
 const canvas = document.createElement('canvas');
 const context = canvas.getContext('2d');
-const socket = io('http://localhost:3000');
+//const socket = io('http://localhost:3000');
+const socket = io('/pong');
 let isReferee = false;
 let paddleIndex = 0;
 
@@ -184,9 +185,9 @@ function loadGame() {
 function startGame() {
   paddleIndex = isReferee ? 0 : 1;
   window.requestAnimationFrame(animate);
-  createCanvas();
-  renderIntro();
-  socket.emit('ready');
+  //createCanvas();
+  //renderIntro();
+  //socket.emit('ready');
   
   canvas.addEventListener('mousemove', (e) => {
     playerMoved = true;
